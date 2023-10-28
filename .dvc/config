@@ -1,0 +1,4 @@
+[core]
+    remote = icfes_remote
+['remote "icfes_remote"']
+    url = gdrive://1JeEVbjpYKDHmt7aDXW7s9blGeeriXaL-/data
