@@ -15,7 +15,7 @@
 | COLE_NOM_SEDE                      | Nombre de la sede educativa                                  | Texto                            |
 | COLE_COD_ICFES                     | Código Icfes de la sede-jornada                              | Número                           |
 | COLE_NATURALEZA                    | Indica la naturaleza del establecimiento educativo          | [No oficial, Oficial]           |
-| COLE_CALENDARIO                   | Indica el calendario de la sede                              | [A, B]                           |
+| COLE_CALENDARIO                   | Indica el calendario de la sede                              | [A, B, Otro]                           |
 | COLE_JORNADA                      | Indica la jornada de la sede                                 | [Mañana, Noche, Sabatina, Tarde, Única] |
 | COLE_COD_MCPIO                    | Código DANE del municipio donde está ubicada la sede        | Número                           |
 | COLE_NOM_MCPIO                    | Nombre del municipio donde está ubicada la sede             | Texto                            |
@@ -27,7 +27,7 @@
 |-----------------------------------|--------------------------------------------------------------|----------------------------------|
 | EXA_CUADERNILLO                   | Indica el cuadernillo al que pertenece el instrumento de valoración | [1, 2]                        |
 | EXA_MODALIDAD                     | Indica la modalidad de presentación del instrumento de valoración | [Online, Offline, Cuadernillos PDF, Papel y lápiz] |
-| EXA_INSTRUMENTO                   | Indica el área de conocimiento valorada por el instrumento de valoración | [A, B]                     |
+| EXA_INSTRUMENTO                   | Indica el área de conocimiento valorada por el instrumento de valoración | [Matemáticas, Lectura crítica, Competencias comunicativas en Lenguaje: Lectura, Ciencias naturales, Inglés, Ciencias naturales y Educación Ambiental, Sociales y ciudadanas, Competencias Ciudadanas: Pensamiento Ciudadano]                     |
 | EXA_COMPONENTE                    | Indica el componente asociado a las respuestas del estudiante | Texto                         |
 | EXA_COMPETENCIA                   | Indica la competencia asociada a las respuestas del estudiante | Texto                         |
 | EXA_N_PREGUNTAS                   | Indica el número de preguntas en total por cada grupo de análisis | Número                    |
