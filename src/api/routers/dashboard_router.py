@@ -1,7 +1,6 @@
 import csv
 import pandas as pd
 
-from core.ProblemDetails import ProblemDetails
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 
