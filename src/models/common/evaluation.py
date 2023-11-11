@@ -5,9 +5,6 @@ import pandas as pd
 from sklearn.metrics import mean_squared_error
 
 def evaluate_model(model_path, data_path):
-    # TODO: Revisar qué otras cosas deberían recibirse como parámetro o estar en un archivo de configuración
-    # TODO: Crear pruebas unitarias
-    # TODO: Se pueden crear pruebas adicionales que revisen las métricas del modelo y alerten si se sale de cierto umbral
     # Se carga el modelo especificado.
     model = mlflow.sklearn.load_model(model_path)
 
