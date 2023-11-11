@@ -5,9 +5,9 @@ import mlflow.sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import get_scorer
 
-def train_model(model, name, data, target_name, params, metrics):
-    X = data.drop(target_name, axis=1)
-    y = data[target_name]
+def train_model(model, name, data, params, metrics):
+    X = data[params['predictors']]
+    y = data[params['target']]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=params['test_size'], random_state=params['random_state'])
 
     # Iniciar el registro de eventos del modelo en MLFlow.
