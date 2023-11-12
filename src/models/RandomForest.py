@@ -1,15 +1,25 @@
 import pandas as pd
 
 from common.training import train_model
-from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
 
 # Definir la configuración para el entrenamiento del modelo.
 data_file = '../../data/processed/EXA_2022_1_Todos_Limp.csv'
-model = LinearRegression()
 predictors = ['ESTU_GRADO', 'COLE_COD_ICFES', 'COLE_COD_MCPIO', 'COLE_COD_DPTO', 'EXA_N_RTAS_CORR_CN', 'EXA_N_RTAS_CORR_CC', 'EXA_N_RTAS_CORR_MT']
 target = 'EXA_N_RTAS_CORR_LC'
-params = {'data_file': data_file, 'predictors': predictors, 'target': target, 'scaling': False, 'test_size': 0.33, 'random_state': 42}
+params = {
+    'data_file': data_file, 
+    'predictors': predictors, 
+    'target': target, 
+    'scaling': False, 
+    'test_size': 0.33, 
+    'random_state': 42,
+    'n_estimators':200, 
+    'max_depth': 80
+}
 metrics = ["neg_mean_squared_error", "neg_mean_absolute_error"]
+
+model = RandomForestRegressor(n_estimators=200, max_depth=80)
 
 # Cargar los datos
 data = pd.read_csv(data_file, sep=',')
@@ -26,7 +36,7 @@ predictors = ['ESTU_GRADO', 'EXA_N_RTAS_CORR_CN', 'EXA_N_RTAS_CORR_CC', 'EXA_N_R
 train_model(model, data, params, metrics)
 
 # Escenario 3 considerando todas las variables numéricas menos COLE_COD_ICFES para evaluar el impacto del colegio en los resultados
-predictors = ['ESTU_GRADO', 'COLE_COD_MCPIO', 'COLE_COD_DPTO', 'EXA_N_RTAS_CORR_CN', 'EXA_N_RTAS_CORR_CC', 'EXA_N_RTAS_CORR_MT']
+predictors = ['ESTU_GRADO', 'COLE_COD_MCPIO', 'COLE_COD_DPTO', 'EXA_N_RTAS_CORR_CN',  'EXA_N_RTAS_CORR_CC', 'EXA_N_RTAS_CORR_MT']
 train_model(model, data, params, metrics)
 
 # Escenario 4 considerando todas las variables numéricas y categóricas
