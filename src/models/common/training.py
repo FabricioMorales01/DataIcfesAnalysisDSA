@@ -41,6 +41,9 @@ def train_model(model, data, params, metrics):
         mlflow.log_params(params)
 
         # Registrar las métricas en MLFlow
+        score = model.score(X_test, y_test)
+        mlflow.log_metric('score', score)
+
         for metric_name in metrics:
             metric_scorer = get_scorer(metric_name)
             metric_value = metric_scorer(model, X_test, y_test)
