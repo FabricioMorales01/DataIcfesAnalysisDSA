@@ -10,13 +10,20 @@ def train_model(model, data, params, metrics):
     name = type(model).__name__
 
     X = data[params['predictors']]
-    y = data[params['target']]
+    # y = data[params['target']]
+
+    # En el escenario 1 consideramos todas las variables numéricas solamente
+    # X = data[['ESTU_GRADO', 'COLE_COD_ICFES', 'COLE_COD_MCPIO', 'COLE_COD_DPTO', 'EXA_N_RTAS_CORR_CN', 'EXA_N_RTAS_CORR_CC', 'EXA_N_RTAS_CORR_MT']]
+
+    # Selecciona la variable dependiente
+    y = data['EXA_N_RTAS_CORR_LC']
+
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=params['test_size'], random_state=params['random_state'])
 
-    if params['scaling'] == True:
-        scaler = StandardScaler()
-        X_train = scaler.fit_transform(X_train)
-        X_test = scaler.transform(X_test)
+    # if params['scaling'] == True:
+    #     scaler = StandardScaler()
+    #     X_train = scaler.fit_transform(X_train)
+    #     X_test = scaler.transform(X_test)
 
     # Iniciar el registro de eventos del modelo en MLFlow.
     # TODO: mlflow.set_tracking_uri("http://127.0.0.1:8050")
@@ -41,6 +48,9 @@ def train_model(model, data, params, metrics):
         mlflow.log_params(params)
 
         # Registrar las métricas en MLFlow
+        score = model.score(X_test, y_test)
+        mlflow.log_metric('score', score)
+
         for metric_name in metrics:
             metric_scorer = get_scorer(metric_name)
             metric_value = metric_scorer(model, X_test, y_test)
