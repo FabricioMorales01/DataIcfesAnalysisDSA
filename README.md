@@ -1,6 +1,6 @@
 ![Alt text](docs/imgs/header.png)
 
-# Caracterización de instituciones educativas de Colombia a partir de algunas variables educativas y los resultados de Evaluar para Avanzar
+# Análisis de los resultados de Evaluar para Avanzar 2022-1 para los estudiantes de instituciones educativas de los departamentos de la Amazonía colombiana.
 
 **Contenido**  
 - [Contexto](#Contexto)
@@ -24,33 +24,33 @@ La implementación de Evaluar para Avanzar se realiza entre los grados 3° y 11�
 
 
 ### Problema<a name="Problema"></a>
-En este sentido, el problema considerado consiste en analizar el impacto de Evaluar para Avanzar en términos de aplicación en instituciones educativas en algunas regiones de Colombia, así como analizar los resultados de estas instituciones en los distintos instrumentos presentados.
-
+En este sentido, el problema considerado consiste en analizar los resultados de los distintos instrumentos de los estudiantes de las instituciones educativas de los departamentos que componen la Amazonía colombiana (Guainía, Vaupés, Vichada, Guaviare y Amazonas ) que aplicaron la estrategia de Evaluar para Avanzar en el 2022-1 e intentar predecir los resultados de la prueba de Lectura a partir de una caracterización del estudiante, considerando que en algunas instituciones no siempre hay disponibilidad de tiempo y recursos para aplicar todos los instrumentos a todos los estudiantes.
 
 ## Definición del proyecto de analítica<a name="Definición"></a>
 ### Pregunta de negocio y alcance del proyecto<a name="Pregunta"></a>
 
-La pregunta de negocio busca establecer una herramienta analítica que presente la información asociada con la aplicación de Evaluar para Avanzar en distintas regiones de Colombia, así como los resultados generales de las instituciones que aplicaron los instrumentos que componen esta estrategia. También se busca generar agrupaciones de estas instituciones en términos de su naturaleza y los resultados de la aplicación.
+La pregunta de negocio busca desarrollar una herramienta analítica que presente los resultados del instrumento de Lectura aplicado durante el 2022-1 de los estudiantes de las instituciones educativas de los departamentos de Amazonas, Guainía, Guaviare, Vaupés y Vichada, así como un modelo predictivo sobre el resultado de este instrumento a partir de características del estudiante, de su establecimiento educativo y los resultados en los demás instrumentos. Se busca así responder a la pregunta:
+
+¿Cuál sería el puntaje en Lectura de un estudiante de alguno de estos 5 departamentos a partir de variables como el género, el grado, la jornada, el municipio y los resultados obtenidos en los otros instrumentos?
 
 ### Objetivo del proyecto<a name="Objetivo"></a>
 
-El presente proyecto tiene como objetivo analizar los resultados de las instituciones educativas colombianas que participaron en la estrategia de Evaluar para Avanzar durante los semestres 2021-1, 2021-2 y 2022-1 y utilizarlos junto con otras variables educativas para caracterizar y encontrar clusters que agrupan estas instituciones educativas.
+El presente proyecto tiene como objetivo analizar los resultados de los estudiantes en la prueba de Lectura de las instituciones educativas colombianas que participaron en la estrategia de Evaluar para Avanzar durante el 2022-1 y utilizarlos junto con otras variables para intentar predecir el resultado en el instrumento de Lectura de estudiantes nuevos o estudiantes que no lograron presentarlo.
 
 ### Alcance del proyecto<a name="Alcance"></a>
 
 El análisis descrito previamente busca:
 
-- Identificar el impacto de Evaluar para Avanzar en términos de la aplicación en distintas regiones de Colombia por parte de las instituciones educativas.
+- Conocer los resultados de los estudiantes de los establecimientos educativos de 5 departamentos que son parte de la Amazonía colombiana que aplicaron la estrategia de Evaluar para Avanzar durante el 2022-1.
 
-- Encontrar agrupaciones de las instituciones educativas que aplicaron Evaluar para Avanzar a partir de variables relacionadas con su naturaleza y con los resultados de los instrumentos de valoración aplicados.
+- Desarrollar un modelo predictivo para el resultado del instrumento de Lectura a partir de variables relacionadas con la naturaleza del establecimiento educativo y con el estudiante y sus resultados en los otros instrumentos.
 
 ### Resultados esperados<a name="Resultados"></a>
 
-Como resultado principal del proyecto, se busca obtener un tablero de control que permita conocer la cantidad de instituciones que aplicaron la estrategia de Evaluar para Avanzar en una región particular, así como una agrupación de estas instituciones según su naturaleza y los resultados obtenidos en los instrumentos. También se espera que el tablero permita visualizar los resultados de las instituciones en cada uno de los instrumentos de valoración que componen esta estrategia.
+Como resultado principal del proyecto, se busca obtener un tablero de control que permita visualizar los resultados de los estudiantes de las instituciones educativas, así como una predicción sobre el resultado de este instrumento de Lectura a partir de variables asociadas al estudiante y su establecimiento educativo.
 
 ### Seguimiento a las actividades del proyecto<a name="Seguimiento"></a>
 Accede a la programación de actividades por cada iteración semanal a través de: https://github.com/users/dayroncj/projects/4/views/4
-
 
 ## ¿Cómo está estructurado este repositorio?<a name="Estructura"></a>
 
