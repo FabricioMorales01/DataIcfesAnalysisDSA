@@ -24,6 +24,12 @@ cd src\api
 uvicorn main:app --reload
 ir en el navegador a http://127.0.0.1:8000/docs
 
+### Cómo contenerizar MLFlow
+Usar la imagen https://hub.docker.com/r/burakince/mlflow
+En una instancia EC2 ejecutar los pasos descritos en https://docs.docker.com/engine/install/ubuntu/ (Los comandos docker pull y docker run deben ejecutarse con sudo)
+sudo docker pull burakince/mlflow
+sudo docker run -p 5000:5000 -d burakince/mlflow
+
 ### Cómo ejecutar experimentos MLFlow
 cd src\models
 python NombreDelModelo.py

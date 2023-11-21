@@ -26,7 +26,8 @@ def train_model(model, data, params, metrics):
     #     X_test = scaler.transform(X_test)
 
     # Iniciar el registro de eventos del modelo en MLFlow.
-    # TODO: mlflow.set_tracking_uri("http://127.0.0.1:8050")
+    # mlflow.set_tracking_uri("http://localhost:5000")
+    mlflow.set_tracking_uri("http://3.85.95.54:5000/")
 
     # Registrar el experimento
     experiment = mlflow.set_experiment(name)
