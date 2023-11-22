@@ -10,24 +10,18 @@ def train_model(model, data, params, metrics):
     name = type(model).__name__
 
     X = data[params['predictors']]
-    # y = data[params['target']]
-
-    # En el escenario 1 consideramos todas las variables numéricas solamente
-    # X = data[['ESTU_GRADO', 'COLE_COD_ICFES', 'COLE_COD_MCPIO', 'COLE_COD_DPTO', 'EXA_N_RTAS_CORR_CN', 'EXA_N_RTAS_CORR_CC', 'EXA_N_RTAS_CORR_MT']]
-
-    # Selecciona la variable dependiente
-    y = data['EXA_N_RTAS_CORR_LC']
+    y = data[params['target']]
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=params['test_size'], random_state=params['random_state'])
 
-    # if params['scaling'] == True:
-    #     scaler = StandardScaler()
-    #     X_train = scaler.fit_transform(X_train)
-    #     X_test = scaler.transform(X_test)
+    if params['scaling'] == True:
+        scaler = StandardScaler()
+        X_train = scaler.fit_transform(X_train)
+        X_test = scaler.transform(X_test)
 
     # Iniciar el registro de eventos del modelo en MLFlow.
-    # mlflow.set_tracking_uri("http://localhost:5000")
-    mlflow.set_tracking_uri("http://3.85.95.54:5000/")
+    mlflow.set_tracking_uri("http://127.0.0.1:8050")
+    # mlflow.set_tracking_uri("http://54.225.16.223:5000/")
 
     # Registrar el experimento
     experiment = mlflow.set_experiment(name)
@@ -39,6 +33,10 @@ def train_model(model, data, params, metrics):
     with mlflow.start_run(experiment_id=experiment.experiment_id, run_name=f'{name} {runs_count}'):
         # Dejar registro del conjunto de datos usado en el experimento
         # TODO: mlflow.log_artifact(params['data_file'], "datasets")
+        
+        # Establecer texto descriptivo del experimento si fue establecido en los parámetros
+        if "description" in params:
+            mlflow.log_param("description", params["description"])
 
         model.fit(X_train, y_train)
 
