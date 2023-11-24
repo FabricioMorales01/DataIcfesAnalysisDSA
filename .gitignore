@@ -4,3 +4,10 @@ __pycache__/
 mlartifacts/
 mlruns/
 /data
+
+# Tox
+package/.tmp
+package/.Tox
+package/.checks
+package/EPA_ModeloLectura.egg-info
+.tar.gz
