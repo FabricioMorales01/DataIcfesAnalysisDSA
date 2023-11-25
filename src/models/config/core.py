@@ -4,17 +4,14 @@ from typing import Dict, List, Optional, Sequence
 from pydantic import BaseModel
 from strictyaml import YAML, load
 
-# import models
+import model
 
 # Project Directories
-# PACKAGE_ROOT = Path(models.__file__).resolve().parent
-PACKAGE_ROOT = "src/models/"
-# ROOT = PACKAGE_ROOT.parent
-ROOT = "src/"
-# CONFIG_FILE_PATH = PACKAGE_ROOT / "config.yml"
-CONFIG_FILE_PATH = "src/models/config/config.yml"
-# DATASET_DIR = PACKAGE_ROOT / "datasets"
-# TRAINED_MODEL_DIR = PACKAGE_ROOT / "trained"
+PACKAGE_ROOT = Path(model.__file__).resolve().parent
+ROOT = PACKAGE_ROOT.parent
+CONFIG_FILE_PATH = PACKAGE_ROOT / "config.yml"
+DATASET_DIR = PACKAGE_ROOT / "datasets"
+TRAINED_MODEL_DIR = PACKAGE_ROOT / "trained"
 
 
 class AppConfig(BaseModel):

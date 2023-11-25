@@ -12,7 +12,6 @@ model/config.yml
 model/pipeline.py
 model/predict.py
 model/train_pipeline.py
-model/xxx.py
 model/config/__init__.py
 model/config/core.py
 model/datasets/EXA_2022_1_Todos_Limp.csv
