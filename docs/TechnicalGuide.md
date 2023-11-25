@@ -21,8 +21,8 @@ Cheat sheet: https://derekchia.com/dvc/
 
 ### Cómo ejecutar el API
 cd src\api
-uvicorn main:app --reload
-ir en el navegador a http://127.0.0.1:8000/docs
+uvicorn app.main:app --reload
+ir en el navegador a http://127.0.0.1:8000
 
 ### Cómo contenerizar MLFlow
 Usar la imagen https://hub.docker.com/r/burakince/mlflow

@@ -9,4 +9,5 @@ A continuación se describe el procedimiento para ejecutar el pipeline de valida
    Tener en cuenta que si el directorio de trabajo contiene espacios es mejor copiar la carpeta *package* a una ruta sin espacios, por ejemplo *c:\temp* y ejecutar desde allí los comandos de tox.
 5. Ejecutar el comando `tox run -e test_package`, siendo *test_package* el nombre del entorno de tox definido en el archivo *tox.ini* para las pruebas del modelo.
 6. Si las pruebas se ejecutaron de manera exitosa, ejecutar el comando `python3 -m build`, para construir el paquete (desde *src\models\package*).
-7. Se creará la carpeta dist, que contendrá el archivo .whl para distribuir el modelo.
+7. Se creará la carpeta dist, que contendrá el archivo .whl para distribuir el modelo.  
+8. Usar un folder diferente por ejemplo (C:\Temp\Test) y entorno de conda limpio, (por ejemplo Icfes). Sobre ese entorno ejecutar el comando `pip install EPA_ModeloLectura-0.0.1-py3-none-any.whl`.  Verificar que el archivo.pkl se copie en C:\anaconda3\envs\Icfes\Lib\site-packages\model\trained, de lo contrario usar `pip install EPA_ModeloLectura-0.0.1-py3-none-any.whl --force-reinstall`

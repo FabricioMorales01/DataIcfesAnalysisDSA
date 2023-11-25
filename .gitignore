@@ -10,3 +10,4 @@ package/.tmp
 package/.tox/
 package/.checks
 package/EPA_ModeloLectura.egg-info
+src/api/__pycache__/main.cpython-311.pyc

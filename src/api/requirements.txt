@@ -1,0 +1,5 @@
+./model-pkg/EPA_ModeloLectura-0.0.2-py3-none-any.whl
+fastapi==0.104.1
+loguru>=0.7.2
+pandas==2.1.2
+uvicorn==0.24.0.post1
