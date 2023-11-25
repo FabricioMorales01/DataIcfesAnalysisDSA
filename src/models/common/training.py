@@ -1,5 +1,6 @@
 import mlflow
 import mlflow.sklearn
+import numpy as np
 
 # from config.core import config
 from sklearn.model_selection import train_test_split
@@ -20,8 +21,8 @@ def train_model(model, data, params, metrics):
         X_test = scaler.transform(X_test)
 
     # Iniciar el registro de eventos del modelo en MLFlow.
-    mlflow.set_tracking_uri("http://127.0.0.1:8050")
-    # mlflow.set_tracking_uri("http://54.225.16.223:5000/")
+    # mlflow.set_tracking_uri("http://127.0.0.1:8050")
+    mlflow.set_tracking_uri("http://3.81.159.3:5000/")
 
     # Registrar el experimento
     experiment = mlflow.set_experiment(name)
@@ -49,6 +50,9 @@ def train_model(model, data, params, metrics):
         # Registrar las métricas en MLFlow
         score = model.score(X_test, y_test)
         mlflow.log_metric('score', score)
+
+        mse = np.average(np.square(y_pred - y_test))
+        mlflow.log_metric('MSE', mse)
 
         for metric_name in metrics:
             metric_scorer = get_scorer(metric_name)

@@ -17,3 +17,4 @@ strictyaml==1.7.3
 tox==4.11.3
 tqdm==4.66.1
 uvicorn==0.24.0.post1
+xgboost==2.0.2
