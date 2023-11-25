@@ -8,16 +8,24 @@ test_data_file: EPA-ModeloLectura-test.csv
 
 # Variables
 # Objetivo
-target: EXA_N_RTAS_CORR_LC
+target: EXA_C_RTAS_CORR_LC
 
 features:
   - ESTU_GRADO
   - COLE_COD_ICFES
   - COLE_COD_MCPIO
   - COLE_COD_DPTO
-  - EXA_N_RTAS_CORR_CN
-  - EXA_N_RTAS_CORR_CC
-  - EXA_N_RTAS_CORR_MT  
+  - EXA_C_RTAS_CORR_CN
+  - EXA_C_RTAS_CORR_CC
+  - EXA_C_RTAS_CORR_MT
+  - ESTU_GENERO_F
+  - COLE_NATURALEZA_O
+  - COLE_JORNADA_COMPLETA
+  - COLE_JORNADA_MAÑANA
+  - COLE_JORNADA_TARDE
+  - EXA_MODALIDAD_OFF
+  - EXA_MODALIDAD_ON
+  - EXA_MODALIDAD_PA
 
 temp_features:
   - EXA_N_RTAS_CORR_LC
@@ -32,19 +40,28 @@ test_size: 0.33
 # semilla
 random_state: 42
 
-# TODO: hiperparámetros del modelo 
-n_estimators: 850
-max_depth: 19
+# Hiperparámetros del modelo 
+n_estimators: 200
+learning_rate: 0.2
+max_depth: 5
 
 # variables a mapear
 qual_vars:
-  - EXA_N_RTAS_CORR_LC
+  - EXA_C_RTAS_CORR_LC
 
-# TODO: Pendiente
+# Variables categóricas
 categorical_vars:
-  - EXA_N_RTAS_CORR_LC
+  - ESTU_GENERO_F
+  - COLE_NATURALEZA_O
+  - COLE_JORNADA_COMPLETA
+  - COLE_JORNADA_MAÑANA
+  - COLE_JORNADA_TARDE
+  - EXA_MODALIDAD_OFF
+  - EXA_MODALIDAD_ON
+  - EXA_MODALIDAD_PA
 
-# TODO: mapeo de variables 
+# Mapeo de variables 
 qual_mappings:
-  Attrited Customer: 1
-  Existing Customer: 0
+  Low reading skills: 0
+  Mid reading skills: 1
+  High reading skills: 2

@@ -19,7 +19,7 @@ def run_training() -> None:
         random_state=config.model_config.random_state,
     )
     
-    # TODO: y_train = y_train.map(config.model_config.qual_mappings)
+    # y_train = y_train.map(config.model_config.qual_mappings)
 
     # fit model
     epa_modelo_lectura_pipe.fit(X_train, y_train)

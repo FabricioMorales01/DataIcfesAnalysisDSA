@@ -37,6 +37,7 @@ class ModelConfig(BaseModel):
     test_size: float
     random_state: int
     n_estimators: int
+    learning_rate: float
     max_depth: int
     temp_features: List[str]
     qual_vars: List[str]
