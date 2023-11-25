@@ -25,7 +25,7 @@ env TOX_ENV_DIR: C:\Temp\package\.tox\test_package
 env VIRTUAL_ENV: C:\Temp\package\.tox\test_package
 env COLUMNS: 120
 env LINES: 30
-metadata pid: 1908
+metadata pid: 9808
 cwd: C:\Temp\package
 allow: C:\Temp\package\.tox\test_package\Scripts\*:train
 cmd: python model/train_pipeline.py

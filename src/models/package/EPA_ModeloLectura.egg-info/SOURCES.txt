@@ -20,6 +20,7 @@ model/processing/__init__.py
 model/processing/data_manager.py
 model/processing/features.py
 model/processing/validation.py
+model/trained/EPA-ModeloLectura-output0.0.2.pkl
 model/trained/__init__.py
 requirements/requirements.txt
 requirements/test_requirements.txt
