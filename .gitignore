@@ -7,7 +7,6 @@ mlruns/
 
 # Tox
 package/.tmp
-package/.Tox
+package/.tox/
 package/.checks
 package/EPA_ModeloLectura.egg-info
-.tar.gz
