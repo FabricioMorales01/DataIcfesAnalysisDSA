@@ -20,7 +20,7 @@ git rebase main
 Cheat sheet: https://derekchia.com/dvc/
 
 ### Cómo ejecutar el API
-cd src\api
+cd src\api\epa_modelolectura_api
 uvicorn app.main:app --reload
 ir en el navegador a http://127.0.0.1:8000
 
@@ -37,6 +37,9 @@ python NombreDelModelo.py
 ### Cómo ejecutar UI MLFlow
 mlflow server -h 127.0.0.1 -p 8050
 
-### Cómo ejecutar las pruebas unitarias
+### Cómo contenerizar API
+cd src\api
+docker build -t epa_modelolectura_api .
+docker run -p 8000:8000 -it -e PORT=8000 epa_modelolectura_api
 
 ### Cómo ejecutar la aplicación Angular

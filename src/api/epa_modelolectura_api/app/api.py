@@ -36,7 +36,7 @@ def get_summarized_data():
     file = 'EXA_2022_1_Todos_Limp.csv'
 
     try:
-        df = pd.read_csv(f"../../data/processed/{file}", delimiter='|')
+        df = pd.read_csv(f"app/data/processed/{file}", delimiter='|')
         data_dict = df.to_dict(orient='records')
         return JSONResponse(content=data_dict)
     except Exception as e:
