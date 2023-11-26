@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
-import { NbMenuModule } from '@nebular/theme';
+import {
+  NbFormFieldModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbDatepickerModule, NbIconModule, NbInputModule, NbMenuModule,
+   NbRadioModule,
+  NbSelectModule, 
+  NbWindowModule} from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -17,6 +21,16 @@ import { IcfesDashboardComponent } from './icfes-dashboard/icfes-dashboard.compo
     DashboardModule,
     ECommerceModule,
     MiscellaneousModule,
+    NbButtonModule,
+    NbInputModule,
+    NbCardModule,
+    NbCheckboxModule,
+    NbRadioModule,
+    NbDatepickerModule,
+    NbSelectModule,
+    NbIconModule,
+    NbFormFieldModule,
+    NbWindowModule.forChild(),
   ],
   declarations: [
     PagesComponent,
