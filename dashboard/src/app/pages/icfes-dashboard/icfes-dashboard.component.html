@@ -6,7 +6,6 @@
     allowFullScreen="true"
 ></iframe>
 
-
 <div class="contianer-buttons" *ngIf="isFrameLoaded">
     <button (click)="showPredict()" nbButton status="primary" size="tiny" shape="semi-round" outline>
         Predecir
@@ -20,39 +19,65 @@
             <div class="col-sm-6">
                 <div class="form-group">
                 <label class="label">Grado</label>
-                <nb-select selected="3" fullWidth>
-                    <nb-option value="3">3</nb-option>
+                <nb-select fullWidth [(selected)]="data.ESTU_GRADO" required>
+                    <nb-option>Seleccionar</nb-option>
+                    <nb-option *ngFor="let grade of grades" [value]="grade">{{ grade }}</nb-option>
                 </nb-select>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
                 <label class="label">Género</label>
-                <nb-select selected="" fullWidth>
-                    <nb-option value="">Seleccionar</nb-option>
-                    <nb-option value="0">Femenino</nb-option>
-                    <nb-option value="1">Maculino</nb-option>
+                <nb-select [(selected)]="data.ESTU_GENERO_F" fullWidth>
+                    <nb-option [value]="null">Seleccionar</nb-option>
+                    <nb-option [value]="true">Femenino</nb-option>
+                    <nb-option [value]="false">Maculino</nb-option>
                 </nb-select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                <label class="label">Instituto</label>
+                <nb-form-field>
+                    <nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon>
+                    <input
+                        [nbAutocomplete]="autoNgModel"
+                        type="text" nbInput fullWidth placeholder="Buscar instituto"
+                        (input)="changeInstituto($event.target.value)"   
+                    >
+
+                    <nb-autocomplete #autoNgModel (selectedChange)="selectInsituto($event)">
+                        <nb-option *ngFor="let option of filteredInstitutos$ | async" [value]="option.COLE_NOM_ESTABLECIMIENTO">
+                            {{ option.COLE_NOM_ESTABLECIMIENTO }}
+                        </nb-option>
+                    </nb-autocomplete>
+                </nb-form-field>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group">
-                <label class="label">Instituto</label>
-                <nb-form-field>
-                    <nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon>
-                    <input type="text" nbInput fullWidth placeholder="Buscar instituto">
-                </nb-form-field>
+                <label class="label">Modalidad</label>
+                <nb-select (selectedChange)="changeModalidad($event)" fullWidth>
+                    <nb-option [value]="null">Seleccionar</nb-option>
+                    <nb-option [value]="1">Online</nb-option>
+                    <nb-option [value]="2">Offline</nb-option>
+                    <!--TODO-GAL: validar -->
+                    <nb-option [value]="3">Papel</nb-option>
+                </nb-select>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
-                <label class="label">Modalidad</label>
-                <nb-select selected="" fullWidth>
-                    <nb-option value="">Seleccionar</nb-option>
-                    <nb-option value="0">Online</nb-option>
-                    <nb-option value="1">Offline</nb-option>
+                <label class="label">Jornada</label>
+                <nb-select (selectedChange)="changeJornada($event)" fullWidth>
+                    <nb-option [value]="null">Seleccionar</nb-option>
+                    <nb-option [value]="1">Mañana</nb-option>
+                    <nb-option [value]="2">Tarde</nb-option>
+                    <nb-option [value]="3">Completa</nb-option>
                 </nb-select>
                 </div>
             </div>
@@ -64,34 +89,34 @@
             <div class="col-sm-4">
                 <div class="form-group">
                 <label class="label">Ciencias Naturales</label>
-                <input type="text" nbInput fullWidth placeholder="0.0">
+                <input [(ngModel)]="data.EXA_C_RTAS_CORR_CN" type="number" nbInput fullWidth placeholder="0">
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="form-group">
                 <label class="label">Competencias Ciudadanas</label>
-                <input type="text" nbInput fullWidth placeholder="0.0">
+                <input [(ngModel)]="data.EXA_C_RTAS_CORR_CC" type="number" nbInput fullWidth placeholder="0">
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="form-group">
                 <label class="label">Matemáticas</label>
-                <input type="text" nbInput fullWidth placeholder="0.0">
+                <input [(ngModel)]="data.EXA_C_RTAS_CORR_MT" type="number" nbInput fullWidth placeholder="0">
                 </div>
             </div>
         </div>
 
-        <div class="row" id="prediction-result">
+        <div *ngIf="isPredicted" class="row" id="prediction-result" >
             <div class="col-sm-12">
                 <div class="form-group center" style="text-align: center;">
-                    <label class="label" style="font-weight: bold; font-size: 18px;">Número de respuestas correctas predicho:</label>
-                    <div id="result" style="font-weight: bold; font-size: 50px; padding-top: 20px;">18</div>
+                    <label class="label" style="font-weight: bold; font-size: 18px;">Se ha clasificado con un: </label>
+                    <div id="result" class="text-result"> {{ categoria }}</div>
                 </div>
             </div>
         </div>
 
         <div style="text-align: center; padding-top: 20px;">
-            <button type="submit" nbButton status="success">Predecir</button>
+            <button type="button" nbButton status="success" (click)="enviar()">Predecir</button>
         </div>
     </nb-card-body>
 </nb-card>

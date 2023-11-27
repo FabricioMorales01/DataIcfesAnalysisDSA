@@ -6,9 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PredictService {
 
-  constructor(http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   predict(data) {
-    return this.http.post('http://172.173.177.148:8000/api/v1/predict', data);
+    return this.http.post('/api/v1/predict', data);
   }
 }

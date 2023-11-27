@@ -20,6 +20,7 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import { PredictService } from './servers/predict.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +40,9 @@ import {
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+  ],
+  providers: [
+    PredictService,
   ],
   bootstrap: [AppComponent],
 })
