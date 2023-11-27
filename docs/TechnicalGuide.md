@@ -43,3 +43,7 @@ docker build -t epa_modelolectura_api .
 docker run -p 8000:8000 -it -e PORT=8000 epa_modelolectura_api
 
 ### Cómo ejecutar la aplicación Angular
+
+----
+cp -r DataIcfesAnalysisDSA/src/api /home/Grupo11/api
+sudo rm -r DataIcfesAnalysisDSA/
