@@ -12,7 +12,7 @@
   - [Resultados esperados](#Resultados)
   - [Seguimiento a las actividades del proyecto](#Seguimiento)
 - [¿Cómo está estructurado este repositorio?](#Estructura)
-- Enlace al video: 
+- Enlace al video: https://drive.google.com/file/d/1O3hi7F7_02YJIE6jwOopzVoUR78xNuzF/view
 
 ## Contexto<a name="Contexto"></a>
 En Colombia, el Instituto Colombiano para la Evaluación de la Educación ICFES, es la entidad encargada de evaluar a nivel nacional las habilidades y competencias de los estudiantes en los distintos niveles escolares, desde grado 3° hasta la formación profesional. Para cumplir con este propósito, el ICFES diseña y aplica un conjunto de exámenes estandarizados conocidos como Pruebas Saber (Saber 3°, 5°, 7° y 9°, Saber 11°, Saber TyT y Saber Pro).
